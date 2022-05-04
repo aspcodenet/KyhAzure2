@@ -38,7 +38,8 @@ namespace GeneratePersonConsoleApp
                 };
 
 
-                var searchResult = searchClient.Search<PersonInAzure>(sok, searchOptions);
+                var searchResult = searchClient.Search<PersonInAzure>
+                    (sok, searchOptions);
 
                 foreach (var result in searchResult.Value.GetResults())
                 {
