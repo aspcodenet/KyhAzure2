@@ -1,0 +1,94 @@
+﻿@model Mvc1VaccinDemo.ViewModels.FaserIndexViewModel
+
+@{
+    ViewData["Title"] = "Vaccinationsfaser";
+}
+
+
+<section class="py-5">
+
+    <div class="row">
+        <div class="col-lg-12 mb-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h6 text-uppercase mb-0">Sök</h3>
+                </div>
+                <div class="card-body">
+
+                    
+                    <form method="get" asp-controller="Faser" asp-action="Index" >
+
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" asp-for="q">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary">Sök</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        @*<form >
+
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label for="SearchWord">Sök:</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" asp-for="SearchWord">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Sök</button>
+                    </div>
+                </div>
+
+            </form>*@
+
+
+        <div class="col-lg-12 mb-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h6 text-uppercase mb-0">Vaccinationsfaser</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Namn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var personViewModel in Model.Faser)
+                            {
+                            <tr>
+                                <td>@personViewModel.Name</td>
+                                <td><a asp-controller="Faser" asp-action="Edit" asp-route-Id="@personViewModel.Id" class="btn btn-secondary active" role="button" aria-pressed="true">Edit</a></td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+        <a asp-controller="Faser" asp-action="New" class="btn btn-secondary" role="button" aria-pressed="true">
+            Create new
+        </a>
+
+
+    </div>
+</section>

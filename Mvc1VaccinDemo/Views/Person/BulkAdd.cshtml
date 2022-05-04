@@ -1,0 +1,39 @@
+﻿@model Mvc1VaccinDemo.ViewModels.PersonBulkAddViewModel
+
+
+@{
+    ViewData["Title"] = "Edit person";
+}
+
+<section class="py-5">
+    <div class="row">
+        <div class="col-lg-12 mb-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h6 text-uppercase mb-0">Bulk skapa personer</h3>
+                </div>
+                
+                <div class="card-body">
+                    <form method="post">
+
+
+                        <div class="form-group">
+                            <label asp-for="Antal">Antal</label>
+                            <input class="form-control" asp-for="Antal">
+                            <span asp-validation-for="Antal" class="field-validation-error"></span>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+

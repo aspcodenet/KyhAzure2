@@ -1,0 +1,24 @@
+﻿@model Mvc1VaccinDemo.ViewModels.SupplierListItem
+
+<tr>
+    <td> </td>
+    <td>@Model.Namn</td>
+    <td>
+        @{
+            string title = "";
+            if (Model.Country == "USA")
+            {
+                title = "Blablabla";
+            }
+            else if (Model.Country == "Sverige")
+            {
+                title = "edeqwwqe";
+            }
+        }
+
+        <span data-toggle="tooltip" data-placement="top" title="@title">
+            @Model.Country
+        </span>
+    </td>
+    <td><a asp-controller="Supplier" asp-action="Edit" asp-route-Id="@Model.Id" class="btn btn-secondary active" role="button" aria-pressed="true">Edit</a></td>
+</tr>
